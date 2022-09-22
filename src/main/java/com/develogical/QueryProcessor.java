@@ -11,6 +11,9 @@ public class QueryProcessor {
 	if (query.toLowerCase().contains("potato")) {
 	    return "Potatoes are the greatest food in the world";
 	}
+	if (query.toLowerCase().contains("name")) {
+	    return "Potato";
+	}
         return "";
     }
 }
