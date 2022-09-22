@@ -14,6 +14,26 @@ public class QueryProcessor {
 	if (query.toLowerCase().contains("name")) {
 	    return "Potato";
 	}
+    if (query.toLowerCase().contains("which of the following numbers if the largest:")) {
+        String[] half = query.split(": ");
+        String[] nums = half[1].split(", ");
+        int largest = -1;
+        for (int i = 0; i < nums.length; i++) {
+            int curr_int = Integer.parseInt(nums[i]);
+            if (curr_int > largest) {
+                largest = curr_int;
+            }
+        }
+        return Integer.toString(largest);
+    }
+
+    if (query.toLowerCase().contains("plus")) {
+        String[] parts = query.split(" plus ");
+        int num1 = Integer.parseInt(parts[1]);
+        String[] first_part = parts[0].split(" is ");
+        int num2 = Integer.parseInt(first_part[1]);
+        return Integer.toString(num1 + num2);
+    }
         return "";
     }
 }
