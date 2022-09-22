@@ -50,4 +50,10 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("what is 6 plus 6"), containsString("12"));
         assertThat(queryProcessor.process("what is 12 plus 6"), containsString("18"));
     }
+
+    //which%20of%20the%20following%20numbers%20is%20both%20a%20square%20and%20a%20cube:%20364,%20100,%20277,%20117649
+    @Test
+    public void knowsAboutSqrt() throws Exception {
+        assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 364, 100, 277, 117649"), containsString("117649"));
+    }
 }
