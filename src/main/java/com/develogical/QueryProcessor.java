@@ -14,7 +14,7 @@ public class QueryProcessor {
 	if (query.toLowerCase().contains("name")) {
 	    return "Potato";
 	}
-    if (query.toLowerCase().contains("which of the following numbers if the largest:")) {
+    if (query.toLowerCase().contains("the largest:")) {
         String[] half = query.split(": ");
         String[] nums = half[1].split(", ");
         int largest = -1;
